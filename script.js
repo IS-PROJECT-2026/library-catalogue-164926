@@ -11,7 +11,15 @@ var catalogue = [
   { title: "Dust",                     author: "Yvonne Owuor",       year: 2013 },
   { title: "The Name of the Rose",     author: "Umberto Eco",        year: 1980 }
 ];
+/* Anything the reader has accessioned is kept in the browser. */
+var stored = localStorage.getItem("readingRoomCatalogue");
+if (stored !== null) {
+  catalogue = JSON.parse(stored);
+}
 
+function keepCatalogue() {
+  localStorage.setItem("readingRoomCatalogue", JSON.stringify(catalogue));
+}
 var shelf = document.getElementById("book-list");
 var emptyNote = document.getElementById("empty-note");
 
@@ -108,6 +116,7 @@ function accession() {
   }
 
   catalogue.push({ title: title, author: author, year: year });
+keepCatalogue();
 
   clearForm();
   searchBox.value = "";
@@ -115,3 +124,9 @@ function accession() {
 }
 
 addButton.addEventListener("click", accession);
+/* --- Clearing ------------------------------------------------- */
+
+/* Lets the reader wipe their additions and return to the base shelf. */
+function emptyStore() {
+  localStorage.removeItem("readingRoomCatalogue");
+}
