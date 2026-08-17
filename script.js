@@ -80,3 +80,38 @@ function runSearch() {
 }
 
 searchBox.addEventListener("input", runSearch);
+/* --- Accession ------------------------------------------------ */
+
+var titleInput  = document.getElementById("title-input");
+var authorInput = document.getElementById("author-input");
+var yearInput   = document.getElementById("year-input");
+var addButton   = document.getElementById("add-book");
+
+function clearForm() {
+  titleInput.value = "";
+  authorInput.value = "";
+  yearInput.value = "";
+}
+
+function accession() {
+  var title  = titleInput.value.trim();
+  var author = authorInput.value.trim();
+  var year   = parseInt(yearInput.value, 10);
+
+  if (title === "" || author === "") {
+    alert("A title and an author are needed before a book can be shelved.");
+    return;
+  }
+
+  if (isNaN(year)) {
+    year = "n.d.";
+  }
+
+  catalogue.push({ title: title, author: author, year: year });
+
+  clearForm();
+  searchBox.value = "";
+  drawShelf(catalogue);
+}
+
+addButton.addEventListener("click", accession);
