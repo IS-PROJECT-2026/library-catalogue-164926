@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Reading Room — Catalogue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <p class="shelf-mark">CAT. NO. 164926</p>
+    <h1>The Reading Room</h1>
+    <p class="tagline">A small catalogue of borrowed and shelved titles.</p>
+  </header>
+
+  <main>
+
+    <section class="finder" aria-labelledby="finder-title">
+      <h2 id="finder-title">Find a title</h2>
+      <input type="search" id="search" placeholder="Search by title or author&hellip;">
+    </section>
+
+    <section class="shelf" aria-labelledby="shelf-title">
+      <h2 id="shelf-title">On the shelf</h2>
+      <ul id="book-list" class="index-cards">
+        <!-- Book entries are inserted here by script.js -->
+      </ul>
+      <p id="empty-note" class="empty-note" hidden>No titles match that search.</p>
+    </section>
+
+    <section class="accession" aria-labelledby="accession-title">
+      <h2 id="accession-title">Accession a new title</h2>
+      <div class="entry-form">
+        <label for="title-input">Title</label>
+        <input type="text" id="title-input">
+
+        <label for="author-input">Author</label>
+        <input type="text" id="author-input">
+
+        <label for="year-input">Year</label>
+        <input type="number" id="year-input">
+
+        <button type="button" id="add-book">Add to catalogue</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="colophon">
+    <p>Library Catalogue 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
