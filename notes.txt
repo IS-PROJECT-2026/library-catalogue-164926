@@ -1,5 +1,0 @@
-Shelf notes
------------
-Base catalogue holds six titles.
-Year is optional; missing years are recorded as n.d.
-Search matches on title and author.
