@@ -1,0 +1,182 @@
+/* ---------------------------------------------------------------
+   The Reading Room — stylesheet
+   Palette: aged paper, ink, faded stamp red
+   --------------------------------------------------------------- */
+
+:root {
+  --paper:      #f4efe2;
+  --card:       #fbf8f0;
+  --ink:        #2c2620;
+  --ink-soft:   #6b6053;
+  --rule:       #c9bda6;
+  --stamp:      #8c3b2e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 4rem;
+  background: var(--paper);
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0 31px,
+    rgba(201, 189, 166, 0.35) 31px 32px
+  );
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+main { max-width: 780px; margin: 0 auto; }
+
+/* --- Masthead ------------------------------------------------- */
+
+.masthead {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 3rem 0 1.5rem;
+  border-bottom: 3px double var(--rule);
+  text-align: center;
+}
+
+.shelf-mark {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--stamp);
+}
+
+.masthead h1 {
+  margin: 0.4rem 0 0.2rem;
+  font-size: 2.6rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  margin: 0;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* --- Section headings ----------------------------------------- */
+
+main h2 {
+  margin: 2.5rem 0 0.9rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.4rem;
+}
+
+/* --- Inputs --------------------------------------------------- */
+
+input {
+  width: 100%;
+  padding: 0.6rem 0.2rem;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--stamp);
+}
+
+/* --- Index cards ---------------------------------------------- */
+
+.index-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.index-cards li {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--stamp);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.7rem;
+  box-shadow: 2px 2px 0 rgba(44, 38, 32, 0.08);
+}
+
+.index-cards .title {
+  display: block;
+  font-size: 1.15rem;
+}
+
+.index-cards .byline {
+  display: block;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.index-cards .year {
+  float: right;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  color: var(--stamp);
+}
+
+.empty-note {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* --- Accession form ------------------------------------------- */
+
+.entry-form label {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+
+#add-book {
+  margin-top: 1.6rem;
+  padding: 0.65rem 1.6rem;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+}
+
+#add-book:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* --- Colophon ------------------------------------------------- */
+
+.colophon {
+  max-width: 780px;
+  margin: 3.5rem auto 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* --- Narrow screens ------------------------------------------- */
+
+@media (max-width: 520px) {
+  .masthead h1 { font-size: 2rem; }
+  .index-cards .year { float: none; display: block; }
+}
