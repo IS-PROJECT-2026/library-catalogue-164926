@@ -50,3 +50,33 @@ function drawShelf(entries) {
 }
 
 drawShelf(catalogue);
+
+/* --- Search --------------------------------------------------- */
+
+var searchBox = document.getElementById("search");
+
+/* Match against title or author, case-insensitive. */
+function matches(entry, term) {
+  var haystack = (entry.title + " " + entry.author).toLowerCase();
+  return haystack.indexOf(term) !== -1;
+}
+
+function runSearch() {
+  var term = searchBox.value.trim().toLowerCase();
+
+  if (term === "") {
+    drawShelf(catalogue);
+    return;
+  }
+
+  var found = [];
+  for (var i = 0; i < catalogue.length; i++) {
+    if (matches(catalogue[i], term)) {
+      found.push(catalogue[i]);
+    }
+  }
+
+  drawShelf(found);
+}
+
+searchBox.addEventListener("input", runSearch);
