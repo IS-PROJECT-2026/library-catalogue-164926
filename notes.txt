@@ -1,0 +1,7 @@
+Shelf notes
+-----------
+Base catalogue holds six titles.
+Year is optional; missing years are recorded as n.d.
+Search matches on title and author.
+Additions are stored in the browser and survive a refresh.
+Clearing browser storage returns the shelf to its base six titles.
