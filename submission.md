@@ -41,8 +41,10 @@
 ## 4. Screenshots of Key GitHub Features
 
 ### A. Milestones and Issues
+Milestones- <img width="596" height="197" alt="image" src="https://github.com/user-attachments/assets/266bd726-264f-4501-a410-c2d83ddd6b34" />
 
-<img width="716" height="248" alt="image" src="https://github.com/user-attachments/assets/4f78b9fe-657e-4208-be0b-3216e4e46fa9" />
+
+issues- <img width="716" height="248" alt="image" src="https://github.com/user-attachments/assets/4f78b9fe-657e-4208-be0b-3216e4e46fa9" />
 
 
 * **Caption:** Three milestones split the build into setup and layout, catalogue features, and polish and deployment, with nine granular issues assigned across them.
